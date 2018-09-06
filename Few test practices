@@ -1,0 +1,20 @@
+# this is to just display the entered text
+#name = input("Give me your name: ")
+#print("Your name is " + name)
+# random password generartor
+# generate a password with length "passlen" with no duplicate characters in the password
+
+import random
+
+s = "abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()?"
+passlen = 8
+p =  "".join(random.sample(s,passlen ))
+print(p)
+# another way
+import string
+import random
+
+def pw_gen(size, chars=string.ascii_letters + string.digits + string.punctuation):
+	return ''.join(random.choice(chars) for _ in range(size))
+
+print(pw_gen(int(input('How many characters in your password?'))))
